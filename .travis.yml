@@ -1,0 +1,19 @@
+language: python
+
+# Define Python versions to test with.
+python:
+  - "3.5"
+  - "3.6-dev" # 3.6 development branch
+
+# Install (linting) dependencies.
+install:
+  - pip install flake8 pylint
+
+# Define script to test.
+env:
+  - SCRIPT_TO_TEST=organise_by_year_and_rename.py
+
+# Run build checks.
+script:
+  - pylint $SCRIPT_TO_TEST
+  - flake8 $SCRIPT_TO_TEST
