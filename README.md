@@ -69,3 +69,12 @@ Checking directories in: 'test_dir'
 [2017-01-10 07:28:47,594] INFO     Moving 'test_dir\170109_Yesterday' to 'test_dir\2017\2017-01-09_Yesterday'
 [2017-01-10 07:28:47,641] INFO     Moving 'test_dir\170110 - Today' to 'test_dir\2017\2017-01-10 - Today'
 ```
+
+## CI Build
+At present just checks that the code passes Pylint and Flake8 checks without errors/warnings.
+
+## Platform
+Developed and tested using Python 3.5 on Windows 7/10.  Not tested on Linux, though I see no obvious reason why it wouldn't work.
+
+## Real world usage
+Ran successfully on my own 'Pictures' folder containing 22,935 image files under 468 folders.
