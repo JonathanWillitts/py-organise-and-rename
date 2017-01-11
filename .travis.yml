@@ -3,7 +3,6 @@ language: python
 # Define Python versions to test with.
 python:
   - "3.5"
-  - "3.6-dev" # 3.6 development branch
 
 # Install (linting) dependencies.
 install:
