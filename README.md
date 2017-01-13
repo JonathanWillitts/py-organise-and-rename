@@ -3,7 +3,7 @@
 
 
 ## Overview
-Script/module to traverse a given directory, organise (by year) and rename any 'yymmdd' prefixed subdirectories to begin in the format: 'YYYY-mm-dd'.
+Script/module to traverse a given directory, organise (by year) and rename, any 'yymmdd' prefixed subdirectories to begin in the format: 'YYYY-mm-dd'.
 
 e.g. given the following directory as the root:
 ```
@@ -40,7 +40,7 @@ First download the repository:
 
     git clone https://github.com/JonathanWillitts/py-organise-and-rename.git
 
-Next edit the `config.ini` config file, specifying the (required) root directory, and (optional) log file path:
+Next edit the `config.ini` config file, specifying the *(required)* root directory, and *(optional)* log file path:
 ```
 [MISC]
 # (Required) Root directory whose subdirectories are to be organised and renamed.
