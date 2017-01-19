@@ -16,3 +16,11 @@ env:
 script:
   - pylint $SCRIPT_TO_TEST
   - flake8 $SCRIPT_TO_TEST
+
+# Configure build notifications.
+notifications:
+  email:
+    recipients:
+      - secure: "cf0TS3asHD5ngHejJti/4DnrjWLEVqGyC8leeDuLvW5yryJFZFiEuJ7lUFZ/fJxb5wYlz9lCgJzVoRWD1LorJh7C2M8i9aphleu5WAtcVFK6pPnAjwJS0DLXjUtf6Ogyimamt+QuTfBfYtusxYJpMl2BJgWys5qrZjomE8RIa6VLZFeYJ/BEyo2djZqXGk5oRpIBX4w5fVG4nBUER+uKjRkHgHT73ui9yQV0XNORYLBf5CVcispeGH6rdEi7UlzeUc22bWah/1IcW6X44XMxwxpj4LaWgoe/1UW9z3BOytjBrOq78GAtJ93MLxunzyccrwkRXx3r2eCqqNu1ho+x849t87yMXYtsK8BCr+debk9jLq0/3Xs/WLROZs8LY71j99V4v39Vv5R89soI79135mc0W2YdtY8Kxax+8d6v1xE7+euCXsvSE16ohELkPXdN1pZ0IxZQsquR9jpHe4Hm1dCFIgL88G1JciNKZO/CWSStrMIjBTAhJOFCHPn+U5b3SMxoWZUzj5po1eg5NGjcTYPMVGua9S5LsNsqHQOhSmMCQ3IGrajEEFemw6PYA9z3ZHsHNt17gkFP1DQ1jQILnOWxYJdkCqUymXoN1SxnSDBRsrHjtvSiRPLgkQJJxpTbMNCP91MOHkUFTQhWZbP8PxNrUghL7+4vUVM9H0Gr1ho="
+    on_success: always # default: change
+    on_failure: always
