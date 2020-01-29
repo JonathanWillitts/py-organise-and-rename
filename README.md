@@ -3,7 +3,7 @@
 
 
 ## Overview
-Script/module to traverse a given directory, organise (by year) and rename, any 'yymmdd' prefixed subdirectories to begin in the format: 'YYYY-mm-dd'.
+Script/module to traverse a given directory, organise (by year), and rename any 'yymmdd' prefixed subdirectories to instead be prefixed in the format: 'YYYY-mm-dd'.
 
 e.g. given the following directory as the root:
 ```
