@@ -14,7 +14,7 @@ env:
 
 # Run build checks.
 script:
-  - pylint $SCRIPT_TO_TEST
+  - pylint disable=logging-not-lazy $SCRIPT_TO_TEST
   - flake8 $SCRIPT_TO_TEST
 
 # Configure build notifications.
