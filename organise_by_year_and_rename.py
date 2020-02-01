@@ -37,7 +37,7 @@ def main():
         file_handler = logging.FileHandler(log_file)
         file_handler.setFormatter(log_formatter)
         logger.addHandler(file_handler)
-        logger.info('Logging to log file: ' + log_file)
+        logger.info('Logging to log file: %s', log_file)
     else:
         logger.info('No log file specified.')
 
@@ -65,13 +65,14 @@ def organise_by_year_and_rename(root_dir):
         StopIteration: If specified root directory not found.
     """
     logger = logging.getLogger()
-    logger.info("\n---\nChecking directories in: '" + root_dir + "'\n---")
+    logger.info("\n---\nChecking directories in: '%s'\n---", root_dir)
 
     try:
         # Get all subdirectories in the root directory.
         _, dir_list, _ = next(os.walk(root_dir))
     except StopIteration as exc:
-        logger.critical("Root directory not found: " + root_dir + str(exc))
+        logger.critical("Root directory not found: '%s' - %s",
+                        root_dir, str(exc))
         raise
 
     # Define pattern for expected date prefix, e.g. 161225 (for 25/12/2016).
@@ -90,9 +91,8 @@ def organise_by_year_and_rename(root_dir):
                 old_date = datetime.strptime(dir_prefix, "%y%m%d")
             except ValueError as exc:
                 logger.warning(
-                    "Skipping folder '" + dir_ +
-                    "' as it does not start in format 'yymmdd'. "
-                    "Exception details: " + str(exc)
+                    "Skipping folder '%s' as it does not start in format "
+                    "'yymmdd'. Exception details: %s", dir_, str(exc)
                 )
             else:
                 dir_suffix = dir_[date_prefix_length:]
@@ -103,7 +103,7 @@ def organise_by_year_and_rename(root_dir):
                 old_path = os.path.join(root_dir, dir_)
 
                 # Move to new path/name, creating missing dirs along the way.
-                logger.info("Moving '" + old_path + "' to '" + new_path + "'")
+                logger.info("Moving '%s' to '%s'", old_path, new_path)
                 os.renames(old_path, new_path)
 
 
